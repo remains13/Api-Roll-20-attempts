@@ -1,4 +1,5 @@
 // a roll following this format is assumed: /r xdx "name of table rolling on"
+// update: will also now read a table with 1 grouping of dice ie 1d4 or 2d100 NOT [[1d100]] [[1d100]] 
 
 on("chat:message", function(msg) {
     
