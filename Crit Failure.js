@@ -5,10 +5,7 @@
 on("chat:message", function(msg) {
     
     var tableName;
-    log(msg);
-    log(msg.content);
-    log(msg.type);
-   
+
     if (msg.type == "general") {
         
 
