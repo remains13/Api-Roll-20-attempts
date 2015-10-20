@@ -1,15 +1,15 @@
-on("chat:message", function(msg){
+on("chat:message", function(msg) {
 	
 	var rollinfo = JSON.parse(msg.content);
 	var tablename;
 														//what table are we rolling?
 	
-	if(msg.type == "general" && msg.content.indexOf("Critical Fail with Melee Weapon") === 0){
+	if (msg.content.indexOf("Critical Fail with Melee Weapon") !== -1) {
 		tablename = "CritFail-Melee-with-Weapon";
 	
 	}
 
-	else if(msg.type == "general" && msg.content.indexOf("Critical Success or Failure") === 0){
+	else if (msg.content.indexOf("Critical Success or Failure") !== -1) {
 		tablename = "CritFail-Unarmed-or-Natural-Weapons";
 	
 	}
@@ -17,7 +17,7 @@ on("chat:message", function(msg){
 	
 	
 	
-	if(msg.type == "rollresult" && rollinfo.total <= 50){
+	if (msg.type == "rollresult" && rollinfo.total <= 50) {
 
 	sendChat(msg.who, "[[1t[" + tablename + "]]]");		// gets sent to chat (reformat to suit)
 	
