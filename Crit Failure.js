@@ -64,7 +64,7 @@ on("chat:message", function(msg) {
 		//
 		
 		
-		if (msg.content.indexOf("Critical Success") !== -1 && msg.inlinerolls[0].results.rolls[0].results[0].v <= 75) {	
+		if (msg.content.indexOf("Critical Success") !== -1 && msg.inlinerolls[0].results.rolls[0].results[0].v >= 75) {	
 			
 			if (msg.content.indexOf("Critical Success with Slashing") !== -1) {
                 
