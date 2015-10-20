@@ -2,54 +2,43 @@
 
 on("chat:message", function(msg) {
 
-	var tablename;
 
-	if (msg.type == "rollresult") {
 
-		var rollinfo = JSON.parse(msg.content);
-
-		
-		if (rollinfo.rolls[0].results[0].v <= 50){
-		
-		var isCrit = function() {								//determining table name and if roll is crit check
-			if (rollinfo.rolls[1].text.indexOf("Critical Fail with Melee Weapon") !== -1) {
-			
-				tablename = "CritFail-Melee-with-Weapon";
+    if (msg.type == "rollresult") {
+        
+        var rollinfo = JSON.parse(msg.content); 
+        var i = msg.origRoll;
+		log(rollinfo);
+        
+        
+        if (i.indexOf("Critical Fail") !== -1 && rollinfo.rolls[0].results[0].v <= 50) {
+            	        	
+           var tableName;       	    			        					          	//determining table name and if roll is crit check
+             
+			if (rollinfo.rolls[1].text == " Critical Fail with Melee Weapon") { 
+               
+				tableName = "CritFail-Melee-with-Weapon";
 				
-				return true;
+                sendChat(msg.who, "[[1t[" + tableName + "]]]");	
+                
+                
+			}
+
+			else if (rollinfo.rolls[1].text == "Critical Fail with Unarmed Strike or Natural Weapons") {
+                
+				tableName = "CritFail-Unarmed-or-Natural-Weapons";
+				
+                sendChat(msg.who, "[[1t[" + tableName + "]]]");    
 				
 			}
-		
-			else if (rollinfo.rolls[1].text.indexOf("Critical Success or Failure") !== -1) {
 			
-				tablename = "CritFail-Unarmed-or-Natural-Weapons";
-				
-				return true;
-				
-			}
-			
-			else {
-			
-				return false;
-				
-			}
 																		//other tables can go here 
-		};
-		
-		if (isCrit === true) {			
-			sendChat(msg.who, "[[1t[" + tablename + "]]]");		
-      
-      // gets sent to chat (reformat to suit)
-      
-		}
-		}
-		
-		
 		
 		}
-	
+		
 
-    
-	
+		
+		}
+
+
 	});
-	
