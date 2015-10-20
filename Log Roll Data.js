@@ -1,13 +1,15 @@
-
-on("chat:message", function(msg){
+					//run this then use macro, copy log :D
+on("chat:message", function(msg) {
 	
 	var rollinfo = JSON.parse(msg.content);
 
 
-					//run this then use macro, copy log :D
+												//gonna do stuff here
 						
-	
+	if (msg.type == "rollresult") {
 	log(rollinfo);
+	}
+
 	
 
 	});
