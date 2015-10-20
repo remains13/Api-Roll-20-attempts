@@ -17,7 +17,7 @@ on("chat:message", function(msg) {
 	
 	
 	
-	if (msg.type == "rollresult" && rollinfo.total <= 50) {
+	if (msg.type == "rollresult" && rollinfo.content.total <= 50) {
 
 	sendChat(msg.who, "[[1t[" + tablename + "]]]");		// gets sent to chat (reformat to suit)
 	
