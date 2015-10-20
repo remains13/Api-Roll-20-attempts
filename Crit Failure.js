@@ -9,7 +9,7 @@ on("chat:message", function(msg) {
         var rollinfo = JSON.parse(msg.content); 
         var i = msg.origRoll;
 		log(rollinfo);
-        
+        log(i);
         
         if (i.indexOf("Critical Fail") !== -1 && rollinfo.rolls[0].results[0].v <= 50) {
             	        	
@@ -19,7 +19,8 @@ on("chat:message", function(msg) {
                
 				tableName = "CritFail-Melee-with-Weapon";
 				
-                sendChat(msg.who, "[[1t[" + tableName + "]]]");	
+               sendChat(msg.who, "&{template:5eDefault} {{character_name=@{" + msg.who + "|character_name}}} @{" + msg.who + "|show_character_name} {{title=Critical Success or Failure}} {{subheader=" + msg.who + "}} {{rollname=Effect}} {{roll=[[1t[" + tableName + "]]]}}");    
+  
                 
                 
 			}
@@ -28,8 +29,9 @@ on("chat:message", function(msg) {
                 
 				tableName = "CritFail-Unarmed-or-Natural-Weapons";
 				
-                sendChat(msg.who, "[[1t[" + tableName + "]]]");    
-				
+                sendChat(msg.who, "&{template:5eDefault} {{character_name=@{" + msg.who + "|character_name}}} @{" + msg.who + "|show_character_name} {{title=Critical Success or Failure}} {{subheader=" + msg.who + "}} {{rollname=Effect}} {{roll=[[1t[" + tableName + "]]]}}");    
+
+            
 			}
 			
 																		//other tables can go here 
