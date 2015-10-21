@@ -1,18 +1,18 @@
 
 ?{Type?
-|Critical Fail with Weapon,!Critical Fail Melee Weapon
-|Critical Fail with Unarmed or Natural Weapons,!Critical Fail Unarmed and Natural Weapons
-|Critical Fail with Ranged Attack,!Critical Fail Ranged Weapon
-|Critical Fail with Spell,!Critical Fail with a Spell
-|Critical Success with Slashing,!Critical Success with Slashing
-|Critical Success with Bludgeoning,!Critical Success with Bludgeoning
-|Critical Success with Piercing,!Critical Success with Piercing
-|Critical Success with Fire,!Critical Success with Fire
-|Critical Success with Cold,!Critical Success with Cold
-|Critical Success with Lighting,!Critical Success with Lightning
-|Critical Success with Force,!Critical Success with Force
-|Critical Success with Necrotic,!Critical Success with Necrotic
-|Critical Success with Radiant,!Critical Success with Radiant
-|Critical Success with Acid,!Critical Success with Acid
-|Critical Success with Psychic,!Critical Success with Psychic
-|Critical Success with Thunder,!Critical Success with Thunder}
+|Critical Fail with Weapon,!CritFail Melee Weapon
+|Critical Fail with Unarmed or Natural Weapons,!CritFail Unarmed and Natural Weapons
+|Critical Fail with Ranged Attack,!CritFail Ranged Weapon
+|Critical Fail with Spell,!CritFail with a Spell
+|Critical Success with Slashing,!CritSuccess with Slashing
+|Critical Success with Bludgeoning,!CritSuccess with Bludgeoning
+|Critical Success with Piercing,!CritSuccess with Piercing
+|Critical Success with Fire,!CritSuccess with Fire
+|Critical Success with Cold,!CritSuccess with Cold
+|Critical Success with Lighting,!CritSuccess with Lightning
+|Critical Success with Force,!CritSuccess with Force
+|Critical Success with Necrotic,!CritSuccess with Necrotic
+|Critical Success with Radiant,!CritSuccess with Radiant
+|Critical Success with Acid,!CritSuccess with Acid
+|Critical Success with Psychic,!CritSuccess with Psychic
+|Critical Success with Thunder,!CritSuccess with Thunder}
