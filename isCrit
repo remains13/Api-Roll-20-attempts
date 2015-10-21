@@ -5,7 +5,7 @@
 
 var successTitle = "Critical Success!";																// What to say as Title for Critical Success Rolls
 var failTitle = "Critical Fail!";																	// What to say as Title for Critical Fail Rolls
-var sub_Header = msg.who;														// Sub header text
+var sub_Header = "msg.who";														// Sub header text
 var noFailText = "Through effort of will you bring yourself back from the precipice of disaster."; 	// What to say if player passes Crit fail Save
 var noSuccessText = "Lady Luck refuses to give you her boon.";										// What to say if player fails Crit Success Save
 
