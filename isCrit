@@ -156,7 +156,7 @@ on("chat:message", function(msg) {
 		}
         else {
             
-        sendChat(msg.who,"&{template:5eDefault} {{title=Critical Fail}} {{subheader=" + msg.who + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=Through effort of will you bring yourself back from the precipice of disaster.}}"); 
+        sendChat(msg.who,"&{template:5eDefault} {{title=Critical Fail}} {{subheader=" + msg.who + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=Lady Luck refuses to give you her boon.}}"); 
         
         }
 
