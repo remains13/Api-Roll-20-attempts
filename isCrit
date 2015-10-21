@@ -5,6 +5,7 @@
 
 var successTitle = "Critical Success!";																// What to say as Title for Critical Success Rolls
 var failTitle = "Critical Fail!";																	// What to say as Title for Critical Fail Rolls
+var sub_Header = "@{selected|character_name}";														// Sub header text
 var noFailText = "Through effort of will you bring yourself back from the precipice of disaster."; 	// What to say if player passes Crit fail Save
 var noSuccessText = "Lady Luck refuses to give you her boon.";										// What to say if player fails Crit Success Save
 
@@ -13,9 +14,9 @@ var noSuccessText = "Lady Luck refuses to give you her boon.";										// What 
 
 
 
-on("chat:message", function(msg) {
 
-var sub_Header = msg.who;														// Sub header text
+
+on("chat:message", function(msg) {
  
     var tableName;
     
@@ -90,77 +91,77 @@ var sub_Header = msg.who;														// Sub header text
                 
 				tableName = "CritSuccess-Slashing";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");    
 				
 			}
 			else if (msg.content.indexOf("Piercing") !== -1) {
                 
 				tableName = "CritSuccess-Piercing";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                 sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");   
 				
 			}
 			else if (msg.content.indexOf("Fire") !== -1) { 	//note set before implemented in macro
                 
 				tableName = "CritSuccess-Fire";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");      
 				
 			}
 			else if (msg.content.indexOf("Cold") !== -1) {
                 
 				tableName = "CritSuccess-Cold";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");    
 				
 			}
 			else if (msg.content.indexOf("Lightning") !== -1) {
                 
 				tableName = "CritSuccess-Lightning";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");     
 				
 			}
 			else if (msg.content.indexOf("Force") !== -1) {
                 
 				tableName = "CritSuccess-Force";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");      
 				
 			}
 			else if (msg.content.indexOf("Necrotic") !== -1) {
                 
 				tableName = "CritSuccess-Necrotic";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");      
 				
 			}
 			else if (msg.content.indexOf("Radiant") !== -1) {
                 
 				tableName = "CritSuccess-Radiant";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");      
 				
 			}
 			else if (msg.content.indexOf("Acid") !== -1) {
                 
 				tableName = "CritSuccess-Acid";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");     
 				
 			}
 			else if (msg.content.indexOf("Psychic") !== -1) {
                 
 				tableName = "CritSuccess-Psychic";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");      
 				
 			}
 			else if (msg.content.indexOf("Thunder") !== -1) {
                 
 				tableName = "CritSuccess-Thunder";
 				
-                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}");    
+                sendChat(msg.who,"&{template:5eDefault} {{title=" + successTitle + "}} {{subheader=" + sub_Header + "}} {{freetext=Critical Check Roll: [[" + rollinfo.total + "]]}} {{result=[[1t[" + tableName + "]]]}}");     
 				
 			}
 
