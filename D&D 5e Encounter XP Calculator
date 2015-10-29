@@ -1,0 +1,280 @@
+//
+// Commands: !Number of Players <X> ; Player <x> is level <x> : Set Player levels and Number of players (done once per party)
+//            !Easy !Medium !Hard !Deadly                     : Returns Encounter XP total and Per player
+//            As of now the API scripts need to be reset between parties though commands are planned to do this.
+//            (They just dont work yet lol)
+//
+//
+//
+//
+
+
+var i;
+if(! state.EncounterXP) {
+    
+    state.EncounterXP = { playernum: [,,,,,,,,,,], playerlvl: [,,,,,,,,,,], Player_Count : 0};
+}
+
+
+var playernum = state.EncounterXP.playernum;
+var playerlvl = state.EncounterXP.playerlvl;
+var Player_Count = state.EncounterXP.Player_Count;
+
+var Easy = [0,25,50,75,125,250,300,350,450,550,600,800,1000,1100,1250,1400,1600,2000,2100,2400,2800];
+var Medium = [0,50,100,150,250,500,600,750,900,1100,1200,1600,2000,2200,2500,2800,3200,3900,4200,4900,5700];
+var Hard = [0,75,150,225,375,750,900,1100,1400,1600,1900,2400,3000,3400,3800,4300,4800,5900,6300,7300,8500];
+var Deadly = [0,100,200,400,500,1100,1400,1700,2100,2400,2800,3600,4500,5100,5700,6400,7200,8800,9500,10900,12700];
+var Difficulty;
+
+
+
+on("chat:message", function(what) {
+
+
+
+
+
+
+
+
+
+    if (what.type == "api") {
+        log(what.content);
+
+        
+        if (what.content.indexOf("!Number of Players") !== -1)
+        {
+            
+            Player_Count = what.content.replace("!Number of Players ","");
+            log(Player_Count);
+            
+            
+            for (i = 1; i <= Player_Count; i++) {
+                
+    			
+               /* 
+                sendChat(what.who,"/w gm [Player " + i + " Entry](!Player " + i + " is level &#63;{What level is Player|0}])");
+ //               sendChat(what.who,"[Player " + i + " Entry](!Player " + i + " Level is: ?{What level is Player " + i + " ?|0})");
+                
+                */
+                
+                
+                                 
+                   
+                state.EncounterXP.playernum[i-1] = i;
+                
+                
+                
+            }
+            
+            sendChat("API", "/w gm Player Number is Set to " + Player_Count + "!")
+            
+            log(state.EncounterXP.playernum);
+            
+        }
+        
+		
+		
+		if (what.content.indexOf("!Player 1 is level") !== -1) {
+			
+			playerlvl[0] = what.content.replace("!Player 1 is level ","");
+			
+			sendChat("API","/w gm Player 1 Level Set to " + playerlvl[0]);
+			
+			
+			
+		} 
+		else if (what.content.indexOf("!Player 2 is level") !== -1) {
+			
+			playerlvl[1] = what.content.replace("!Player 2 is level ","");
+		
+			
+			sendChat("API","/w gm Player 2 Level Set to " + playerlvl[1]);
+		
+		}
+		else if (what.content.indexOf("!Player 3 is level") !== -1) {
+			
+			playerlvl[2] = what.content.replace("!Player 3 is level ","");
+		
+			
+			sendChat("API","/w gm Player 3 Level Set to " + playerlvl[2]);
+		
+		}
+		else if (what.content.indexOf("!Player 4 is level") !== -1) {
+			
+			playerlvl[3] = what.content.replace("!Player 4 is level ","");
+			
+			sendChat("API","/w gm Player 4 Level Set to " + playerlvl[3]);
+	
+		}
+		
+		else if (what.content.indexOf("!Player 5 is level") !== -1) {
+			
+			playerlvl[4] = what.content.replace("!Player 5 is level ","");
+			
+			sendChat("API","/w gm Player 5 Level Set to " + playerlvl[4]);
+	
+		}
+		else if (what.content.indexOf("!Player 6 is level") !== -1) {
+			
+			playerlvl[5] = what.content.replace("!Player 6 is level ","");
+			
+			sendChat("API","/w gm Player 6 Level Set to " + playerlvl[5]);
+	
+		}
+		else if (what.content.indexOf("!Player 7 is level") !== -1) {
+			
+			playerlvl[6] = what.content.replace("!Player 7 is level ","");
+			
+			sendChat("API","/w gm Player 7 Level Set to " + playerlvl[6]);
+	
+		}
+		else if (what.content.indexOf("!Player 8 is level") !== -1) {
+			
+			playerlvl[7] = what.content.replace("!Player 8 is level ","");
+			
+			sendChat("API","/w gm Player 8 Level Set to " + playerlvl[7]);
+	
+		}
+		else if (what.content.indexOf("!Player 9 is level") !== -1) {
+			
+			playerlvl[8] = what.content.replace("!Player 9 is level ","");
+			
+			sendChat("API","/w gm Player 9 Level Set to " + playerlvl[8]);
+	
+		}
+		else if (what.content.indexOf("!Player 10 is level") !== -1) {
+			
+			playerlvl[9] = what.content.replace("!Player 10 is level ","");
+			
+			sendChat("API","/w gm Player 10 Level Set to " + playerlvl[9]);
+	
+		}
+		
+		
+		if (what.content.indexOf("!Easy") !== -1) {
+			
+			Difficulty = Easy;
+			
+			XP(); 
+			
+			
+			
+		}
+		
+		if (what.content.indexOf("!Medium") !== -1) {
+			
+			Difficulty = Medium;
+			
+			XP(); 
+			
+			
+			
+		}
+		
+		if (what.content.indexOf("!Hard") !== -1) {
+			
+			Difficulty = Hard;
+			
+			XP(); 
+			
+			
+			
+		}
+		
+		if (what.content.indexOf("!Deadly") !== -1) {
+			
+			Difficulty = Deadly;
+			
+			XP(); 
+			
+			
+			
+		}
+		
+		if (what.content.indexOf("!New Party") !== -1 || what.content.indexOf("!ClearEncounterXP") !== -1 || what.content.indexOf("!XPClear") !== -1  ) {
+    	 
+         
+         
+             state.EncounterXP = { playernum: [,,,,,,,,,,], playerlvl: [,,,,,,,,,,], Player_Count : 0};
+         
+         
+         
+		}
+
+		
+		
+		
+		
+	/*	
+        if (what.content.indexOf(" is level ") !== -1) {
+            
+			for (i = 1; i <= Player_Count; i++)
+			{
+				playerlevel[i-1] = what.content.replace("!Player " + i + " is level ", "");
+				
+				
+				
+				
+			}
+			
+            
+            
+        }
+        
+      */  
+        
+        
+        
+        
+        
+        
+    }
+
+
+});
+
+
+
+    function XP() {
+     	var Total_XP = 0;
+     	var M = 0;
+     	var H = 0;
+     	var D = 0;
+
+     	
+     	if (Player_Count >= 1) {
+     		
+     		log("There are currently " + Player_Count + " Players");
+     		
+     
+     		for (i = 1; i <= Player_Count; i++) {
+     			
+     			
+ 
+     			
+			log(playerlvl[i-1]);
+     		Total_XP += Difficulty[playerlvl[i-1]];
+     	
+
+     		
+     		}
+     		
+     		
+     		
+     		
+     		sendChat("API","/w gm Total Encounter XP is:  [[" + Total_XP + "]] XP");
+     		sendChat("API","/w gm XP Per Player: [[" + Total_XP / Player_Count + "]] XP");			
+     	
+     
+     
+     
+     	
+     	}
+     	
+
+
+	}
+
+
+
